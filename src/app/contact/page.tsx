@@ -1,4 +1,4 @@
-import ResponsiveDesign from "@/components/res-design";
+import ResponsiveDesign from "@/components/ResDesign";
 
 export default function contact() {
   return (
