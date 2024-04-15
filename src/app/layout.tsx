@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import MainNav from "@/components/Navigation/Navbar";
-
-const inter = Inter({ subsets: ["latin"] });
+import { satoshi, lato } from "@/utils/customFonts";
 
 export const metadata: Metadata = {
   title: "LeadOnGlobal",
@@ -16,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${satoshi.variable} ${lato.variable}`}>
       <body className="relative min-w-full min-h-screen">
         <MainNav />
         {children}

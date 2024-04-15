@@ -5,9 +5,15 @@ export default function HeroSection() {
     <section className="text-gray-600 body-font border-b-2">
       <div className="container h-screen mx-auto flex px-3 md:px-5 xl:px-16 2xl:px-20 py-24 md:flex-row flex-col items-center">
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <p className="leading-relaxed">ELEVATE YOUR BUSINESS</p>
-          <h1 className="title-font sm:text-4xl text-3xl font-medium text-gray-900 mb-8">
-            Bring your vision to life with innovative software solution
+          <p className="leading-loose tracking-widest uppercase">
+            ELEVATE YOUR BUSINESS
+          </p>
+          <h1 className="font-satoshi tracking-tight uppercase title-font sm:text-4xl text-3xl font-extrabold text-gray-900 mb-8">
+            Bringing your vision to life with{" "}
+            <span className="font-extrabold tracking-wider text-gray-100 font-outline-2">
+              innovative
+            </span>{" "}
+            software solution
           </h1>
           <div className="flex justify-center">
             <BtnSecondary
