@@ -6,6 +6,7 @@ import { satoshi, lato } from "@/utils/customFonts";
 export const metadata: Metadata = {
   title: "Software House | Lead On Global",
   description: "LOG",
+  keywords: "Software House, Software Development",
 };
 
 export default function RootLayout({
