@@ -1,7 +1,17 @@
-.BtnSecondary span:first-child {
-  transform: translateX(-101%);
-  transition: transform 0.3s ease-in;
+.item:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #090909;
+  border: 1px solid #fff;
+  top: 0;
+  left: 0;
 }
-.BtnSecondary:hover span {
-  transform: translateX(0);
+.item__content {
+  transform: translate(-4px, -4px);
+  transition: transform 0.2s;
+}
+.item__content:hover {
+  transform: translate(0, 0);
 }
