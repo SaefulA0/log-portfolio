@@ -1,12 +1,92 @@
+"use client";
+import "./home.css";
 import BtnSecondary from "@/components/Button/BtnPrimary";
 import BgHeroSection from "../../../public/imgs/bg-hero-section.png";
 import { GoArrowDown } from "react-icons/go";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  const scrollToNextScreen = () => {
+    const screenHeight = window.innerHeight;
+    window.scrollBy({ top: screenHeight, behavior: "smooth" });
+  };
+
+  const pVariants = {
+    offscreen: {
+      x: -20,
+      opacity: 0,
+      transition: {
+        duration: 0.2,
+      },
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 1.5,
+      },
+    },
+  };
+
+  const h1Variants = {
+    offscreen: {
+      x: -20,
+      opacity: 0,
+      transition: {
+        duration: 0.2,
+      },
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 2.5,
+      },
+    },
+  };
+
+  const btnVariants = {
+    offscreen: {
+      x: -20,
+      opacity: 0,
+      transition: {
+        duration: 0.2,
+      },
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 2,
+      },
+    },
+  };
+
+  const heroImgVariants = {
+    offscreen: {
+      x: 20,
+      opacity: 0,
+      transition: {
+        duration: 0.2,
+      },
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 1.5,
+      },
+    },
+  };
+
   return (
     <section
-      className="text-Dark1 body-font border-b-2 font-satoshi"
+      className="text-Dark1 body-font border-b-2"
       style={{
         backgroundImage: `url(${BgHeroSection.src})`,
         backgroundPosition: "center",
@@ -17,32 +97,58 @@ export default function HeroSection() {
         justifyContent: "center",
       }}
     >
-      <div className="container min-h-screen mx-auto flex px-3 md:px-5 xl:px-16 2xl:px-20 py-24 md:flex-row flex-col items-center justify-between">
-        <div className="lg:flex-grow w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <p className="leading-loose tracking-widest uppercase mb-1 text-lg font-semibold text-black">
+      <div className="container min-h-screen mx-auto flex px-8 md:px-10 lg:px-16 xl:px-20 2xl:px-20 pb-14 pt-16 md:pt-24 flex-col-reverse md:flex-row items-center justify-center md:justify-between">
+        <div className="lg:flex-grow w-full sm:w-4/6 md:w-3/5 flex flex-col md:items-start md:text-left md:mb-0 items-center text-center mt-14 sm:mt-14 md:mt-0">
+          <motion.p
+            variants={pVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+            className="leading-loose tracking-widest sm:tracking-widest2 lg:tracking-widest3 uppercase mb-1 text-base font-semibold text-Dark1 font-satoshi"
+          >
             ELEVATE YOUR BUSINESS
-          </p>
-          <h1 className="tracking-tight uppercase title-font md:text-3xl lg:text-5xl text-3xl font-extrabold text-gray-900 mb-8">
+          </motion.p>
+          <motion.h1
+            variants={h1Variants}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+            className="tracking-normal md:tracking-tighter leading-snug sm:leading-tight uppercase text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-black mb-8 font-satoshi w-11/12 sm:w-full lg:w-11/12"
+          >
             Bringing your vision to life with{" "}
-            <span className="font-extrabold tracking-normal text-gray-100 font-outline-2">
+            <span className="font-black tracking-tight font-lato text-gray-100 font-outline-1">
               innovative
             </span>{" "}
             software solutions.
-          </h1>
-          <div className="flex justify-center">
+          </motion.h1>
+          <motion.div
+            variants={btnVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+            className="flex justify-center"
+          >
             <BtnSecondary
-              href="/"
-              componentStyle="px-2 py-2 md:px-2 lg:px-6 xl:px-8 md:py-2 lg:py-3 bg-white"
-              BgHover="bg-[#090909]"
+              onClick={scrollToNextScreen}
+              componentStyle="bg-white hover:bg-black hover:text-white font-satoshi font-bold py-2 px-6 border border-black bg-white cursor-pointer"
             >
               Scroll down
             </BtnSecondary>
-          </div>
+          </motion.div>
         </div>
-        <div className="relative h-[24.5rem] md:h-[21rem] lg:h-[24.5rem] xl:h-[28.5rem] w-[24.5rem] md:w-[21rem] lg:w-[24.5rem] xl:w-[28.5rem] border-2 border-black">
-          <button className="absolute right-7 -top-10 w-fit h-fit p-1.5 bg-white z-10">
-            <div className="w-12 h-12 flex justify-center items-center bg-MainColor">
-              <GoArrowDown size={22} color="black" />
+        <motion.div
+          variants={heroImgVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          className="relative h-[11rem] sm:h-[14rem] md:h-[19rem] lg:h-[20rem] xl:h-[22rem] 2xl:h-[24rem] w-full md:w-[19rem] lg:w-[20rem] xl:w-[22rem] 2xl:w-[24rem] border-2 border-black"
+        >
+          <button
+            onClick={scrollToNextScreen}
+            className="absolute right-7 -top-8 w-fit h-fit p-1 bg-white z-10"
+          >
+            <div className="w-10 lg:w-12 h-10 lg:h-12 p-2 lg:p-3.5 flex justify-center items-center bg-MainColor">
+              <GoArrowDown size={22} className="w-full h-full" color="black" />
             </div>
           </button>
           <Image
@@ -50,9 +156,10 @@ export default function HeroSection() {
             width={1080}
             height={1080}
             alt="Office Image"
-            className="absolute -top-3 -left-3 object-cover object-center aspect-square h-[24.5rem] md:h-[21rem] lg:h-[24.5rem] xl:h-[28.5rem] w-[24.5rem] md:w-[21rem] lg:w-[24.5rem] xl:w-[28.5rem]"
+            priority
+            className="absolute -top-1.5 lg:-top-2 xl:-top-3 -left-1.5 lg:-left-2 xl:-left-3 object-cover object-center aspect-square h-full w-full"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

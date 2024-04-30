@@ -19,7 +19,7 @@
   width: 30px;
   height: 100%;
   /* background-color: #fff; */
-  /* animation: shiny-btn1 3s ease-in-out infinite; */
+  animation: shiny-btn1 3s ease-in-out infinite;
 }
 .btn-11:active {
   box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
