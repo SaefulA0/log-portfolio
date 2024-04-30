@@ -140,7 +140,7 @@ const SecondSection = () => {
         ))}
       </div>
       <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-screen-2xl">
-        <div className="grid w-full grid-cols-1 gap-8 mx-auto lg:grid-cols-3 xl:grid-cols-2 ">
+        <div className="grid w-full grid-cols-1 gap-8 mx-auto lg:grid-cols-2 xl:grid-cols-2 ">
           {currentProjects.map((project, index) => {
             return (
               <div className="px-9 py-6  border-black border-2 " key={index}>

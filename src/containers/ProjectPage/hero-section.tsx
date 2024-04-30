@@ -20,8 +20,6 @@ const HeroSection = () => {
         >
           Our Works
         </h1>
-
-        {/* <p className="font-satoshi tracking-wider text-[10px] font-normal sm:text-[10px] md:text-[0.8rem] lg:text-[1rem] xl:text-[1rem] 2xl:text-[1.3rem] text-[#BDBDBD] sm:pt-5 md:w-2/3 xl:w-3/4 2xl:w-4/5"> */}
         <h2 className="text-center 2xl:w-[600px] 2xl:text-[16px] text-sm text-[#cfc6c6de] text-opacity-75 font-normal font-['Satoshi'] leading-tight tracking-wide">
           Developing Koperasi Information System (Web App) for Koperasi Pekerja
           Indonesia Maju, Indonesia.

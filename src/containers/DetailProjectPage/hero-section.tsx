@@ -1,0 +1,36 @@
+import BgHeroProject from "../../../public/imgs/img_project/hero-project.png";
+
+const HeroSection = () => {
+  return (
+    <section
+      className="text-gray-600 body-font border-b-2 px-3 md:px-5 xl:px-16 2xl:px-20 py-24 md:flex-row flex-col items-center bg-cover bg-center bg-no-repeat flex justify-center h-532 md:h-[400px] xl:h-[500px] 2xl:h-[532px]"
+      style={{
+        backgroundImage: `url(${BgHeroProject.src})`,
+      }}
+    >
+      <div className="items-center text-center flex flex-col 2xl:mt-9 xl:mt-7">
+        <h2 className="text-center text-[#cfc6c6de] text-opacity-75 text-base font-normal font-satoshi leading-tight  2xl:mt-12 mb-5 uppercase">
+          case study
+        </h2>
+        <h1
+          className="w-96 text-center text-white 2xl:text-6xl xl:text-6xl lg:text-5xl text-4xl font-medium font-['Satoshi'] leading-10 mb-8"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, #ffffff 10%, #6C6C6C 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            lineHeight: "1.2",
+          }}
+        >
+          Koperasi Web
+        </h1>
+        <h2 className="text-center 2xl:w-[600px] 2xl:text-[16px] text-sm text-[#cfc6c6de] text-opacity-75 font-normal font-['Satoshi'] leading-tight tracking-wide">
+          Developing Koperasi Information System (Web App) for Koperasi Pekerja
+          Indonesia Maju, Indonesia.
+        </h2>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
