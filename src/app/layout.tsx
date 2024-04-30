@@ -5,7 +5,8 @@ import { satoshi, lato } from "@/lib/customFonts";
 
 export const metadata: Metadata = {
   title: "Software House | Lead On Global",
-  description: "LOG",
+  description:
+    "Lead On Global is a software development company dedicated to providing the best technology solutions for your business. With our expert team, we offer innovative software development services tailored to your needs. Find the right software solutions to advance your business with us",
   keywords: "Software House, Software Development",
 };
 
@@ -18,7 +19,7 @@ export default function RootLayout({
     <html lang="en" className={`${satoshi.variable} ${lato.variable}`}>
       <body className="relative min-w-full min-h-screen">
         <Navbar />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );
