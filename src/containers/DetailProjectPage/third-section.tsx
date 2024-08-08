@@ -1,18 +1,62 @@
+"use client";
+
 import Image from "next/image";
 
 //image public
 import iconProcess from "../../../public/imgs/img_project/img_bagian_process_project.png";
 
+//framer motion
+import { motion } from "framer-motion";
+
 const Thirdsection = () => {
+  const contentVariants = {
+    offscreen: {
+      y: 20,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 1.5,
+      },
+    },
+  };
+
+  const forTech = {
+    offscreen: {
+      x: -20,
+      opacity: 0,
+      transition: {
+        duration: 0.2,
+      },
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 1.5,
+      },
+    },
+  };
+
   return (
     <section className="container md:mt-24 mt-10  mx-auto">
       {/* about */}
-      <div className="md:container xl:px-[18%] xl:mt-36">
-        <h1 className="font-['Satoshi'] text-3xl md:text-4xl xl:text-5xl xl:py-5 py-3 md:font-medium font-bold xl:font-bold">
+      <motion.div
+        variants={contentVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className="md:container xl:px-[18%] xl:mt-36"
+      >
+        <h2 className="font-['Satoshi'] text-3xl md:text-4xl xl:py-5 py-3 md:font-medium font-bold xl:font-bold">
           About The Project
-        </h1>
+        </h2>
 
-        <p className="text-sm xl:text-2xl md:text-xl text-gray-500 text-justify font-normal font-['Satoshi']">
+        <p className="text-sm md:text-xl text-gray-500 text-justify font-normal font-lato">
           Sistem Informasi Koperasi (SIKOP) bertujuan untuk mempermudah anggota
           koperasi dalam manajemen data kehadiran, arsip, dan layanan lainnya
           seperti penggajian.
@@ -22,14 +66,20 @@ const Thirdsection = () => {
           Lembar Waktu Harian, Penghitungan Tunjangan Kinerja, Konfirmasi
           Ketidakhadiran, Pemantauan Cuti, Manajer Berkas, dan Notifikasi.
         </p>
-      </div>
+      </motion.div>
       {/* process */}
-      <div className="md:container xl:px-[18%] xl:mt-16 mt-4 ">
-        <h1 className="font-['Satoshi'] text-3xl md:text-4xl xl:text-5xl xl:py-5 md:font-medium font-bold xl:font-bold">
+      <motion.div
+        variants={contentVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className="md:container xl:px-[18%] xl:mt-16 mt-4 "
+      >
+        <h2 className="font-['Satoshi'] text-3xl md:text-4xl xl:py-5 md:font-medium font-bold xl:font-bold">
           Process
-        </h1>
+        </h2>
         <div className="my-2">
-          <p className="text-sm xl:text-2xl md:text-xl text-gray-500 text-justify tracking-tight font-normal font-['Satoshi']">
+          <p className="text-sm md:text-xl text-gray-500 text-justify tracking-tight font-normal font-lato">
             Dalam proses pengembangan sistem informasi koperasi, tahapan dimulai
             dengan sesi brainstorming oleh tim pengembang sebagai langkah awal.
             Selanjutnya, tim analisis sistem akan melakukan riset kebutuhan
@@ -38,7 +88,7 @@ const Thirdsection = () => {
           </p>
         </div>
         <div className="my-5">
-          <p className="text-sm xl:text-2xl md:text-xl text-gray-500 text-justify tracking-tight font-normal font-['Satoshi']">
+          <p className="text-sm md:text-xl text-gray-500 text-justify tracking-tight font-normal font-lato">
             Sementara itu, tim desain akan merancang antarmuka pengguna (UI) dan
             mengembangkan struktur sistem yang sesuai. Setelah itu, tim
             pengembangan akan mengeksekusi pengembangan sistem berdasarkan
@@ -60,16 +110,22 @@ const Thirdsection = () => {
             />
           </div>
         </div>
-      </div>
-      {/* tantangan */}
+      </motion.div>
 
-      <div className="md:container xl:px-[18%] xl:mt-10 my-5">
-        <h1 className="font-['Satoshi'] text-3xl md:text-4xl xl:text-5xl xl:pb-6 py-3 md:font-medium font-bold xl:font-bold">
+      {/* tantangan */}
+      <motion.div
+        variants={contentVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className="md:container xl:px-[18%] xl:mt-10 my-5"
+      >
+        <h2 className="font-['Satoshi'] text-3xl md:text-4xl xl:pb-6 py-3 md:font-medium font-bold xl:font-bold">
           Tantangan
-        </h1>
+        </h2>
 
         <div>
-          <p className="text-sm xl:text-2xl md:text-xl text-gray-500 text-justify tracking-tight font-normal font-['Satoshi']">
+          <p className="text-sm md:text-xl text-gray-500 text-justify tracking-tight font-normal font-lato">
             Dalam project ini salah satu tantangannya adalah meningkatkan
             efisiensi operasional, sistem informasi koperasi harus mampu
             mengintegrasikan berbagai jenis transaksi keuangan dan administrasi
@@ -80,15 +136,22 @@ const Thirdsection = () => {
             pengambilan keputusan yang lebih baik.
           </p>
         </div>
-      </div>
+      </motion.div>
+
       {/* hasil */}
-      <div className="md:container xl:px-[18%] xl:mt-10">
-        <h1 className="font-['Satoshi'] text-3xl md:text-4xl xl:text-5xl py-3 md:font-medium font-bold xl:font-bold">
+      <motion.div
+        variants={contentVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className="md:container xl:px-[18%] xl:mt-10"
+      >
+        <h2 className="font-['Satoshi'] text-3xl md:text-4xl py-3 md:font-medium font-bold xl:font-bold">
           Hasil
-        </h1>
+        </h2>
 
         <div>
-          <p className="text-sm xl:text-2xl md:text-xl text-gray-500 text-justify tracking-tight font-normal font-['Satoshi']">
+          <p className="text-sm md:text-xl text-gray-500 text-justify tracking-tight font-normal font-lato">
             Koperasi "Maju Bersama" mempercayakan Lead On Global untuk merancang
             dan mengembangkan sistem informasi koperasi mereka dari awal. Lead
             On Global memulai dengan merancang sistem yang memenuhi kebutuhan
@@ -99,9 +162,16 @@ const Thirdsection = () => {
             maupun dalam partisipasi online.
           </p>
         </div>
-      </div>
+      </motion.div>
+
       {/* list */}
-      <div className="md:container xl:px-[18%] xl:mt-5">
+      <motion.div
+        variants={contentVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className="md:container xl:px-[18%] xl:mt-5"
+      >
         <div className="my-4 text-gray-500 xl:text-xl">
           <div className="flex items-center gap-2 py-1">
             <div className="w-[6px] h-[6px] bg-gray-500 text-gray-500 rounded-full justify-between" />
@@ -128,34 +198,41 @@ const Thirdsection = () => {
             <span>Support and Maintenance</span>
           </div>
         </div>
-      </div>
+      </motion.div>
+
       {/* technology */}
-      <div className="md:container xl:px-[18%] xl:mt-10 py-5">
-        <h1 className="font-['Satoshi'] text-3xl md:text-4xl xl:text-5xl mb-5 md:font-medium font-bold xl:font-bold">
+      <motion.div
+        variants={forTech}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className="md:container xl:px-[18%] xl:mt-10 py-5"
+      >
+        <h2 className="font-['Satoshi'] text-3xl md:text-4xl mb-5 md:font-medium font-bold xl:font-bold">
           Technology
-        </h1>
+        </h2>
         <div className="flex flex-wrap gap-3 justify-start">
           <div className="border-2 border-black">
-            <h1 className="text-sm font-['Satoshi'] px-4 py-2">Figma</h1>
+            <h2 className="text-sm font-['Satoshi'] px-4 py-2">Figma</h2>
           </div>
           <div className="border-2 border-black">
-            <h1 className="text-sm font-['Satoshi'] px-4 py-2">React</h1>
+            <h2 className="text-sm font-['Satoshi'] px-4 py-2">React</h2>
           </div>
           <div className="border-2 border-black">
-            <h1 className="text-sm font-['Satoshi'] px-4 py-2">Javascript</h1>
+            <h2 className="text-sm font-['Satoshi'] px-4 py-2">Javascript</h2>
           </div>
           <div className="border-2 border-black">
-            <h1 className="text-sm font-['Satoshi'] px-4 py-2">Laravel</h1>
+            <h2 className="text-sm font-['Satoshi'] px-4 py-2">Laravel</h2>
           </div>
 
           <div className="border-2 border-black">
-            <h1 className="text-sm font-['Satoshi'] px-4 py-2">Tailwind CSS</h1>
+            <h2 className="text-sm font-['Satoshi'] px-4 py-2">Tailwind CSS</h2>
           </div>
           <div className="border-2 border-black">
-            <h1 className="text-sm font-['Satoshi'] px-4 py-2">Node JS</h1>
+            <h2 className="text-sm font-['Satoshi'] px-4 py-2">Node JS</h2>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

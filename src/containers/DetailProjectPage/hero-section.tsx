@@ -1,4 +1,8 @@
+"use client";
 import BgHeroProject from "../../../public/imgs/img_project/hero-project.png";
+
+//framer motion
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -8,9 +12,14 @@ const HeroSection = () => {
         backgroundImage: `url(${BgHeroProject.src})`,
       }}
     >
-      <div className="items-center text-center flex flex-col 2xl:mt-9 xl:mt-7">
+      <motion.div
+        className="items-center text-center flex flex-col 2xl:mt-9 xl:mt-7"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
         <h2 className="text-center text-[#cfc6c6de] text-opacity-75 text-base font-normal font-satoshi leading-tight  2xl:mt-12 mb-5 uppercase">
-          case study
+          Web Site
         </h2>
         <h1
           className="w-96 text-center text-white 2xl:text-6xl xl:text-6xl lg:text-5xl text-4xl font-medium font-['Satoshi'] leading-10 mb-8"
@@ -28,7 +37,7 @@ const HeroSection = () => {
           Developing Koperasi Information System (Web App) for Koperasi Pekerja
           Indonesia Maju, Indonesia.
         </h2>
-      </div>
+      </motion.div>
     </section>
   );
 };
