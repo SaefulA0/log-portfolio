@@ -3,23 +3,17 @@
 @tailwind utilities;
 
 @layer base {
-  .font-outline-2 {
-    -webkit-text-stroke: 1.2px black;
-  }
-  .font-outline-4 {
-    -webkit-text-stroke: 4px black;
-  }
-
   ::-webkit-scrollbar {
     width: 10px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #718096;
+    background-color: #49494a;
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: #cbd5e0;
+    background-color: #dfdfdf;
   }
 
   /* ::-webkit-scrollbar-track:hover {
@@ -27,7 +21,7 @@
   } */
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: red;
+    background-color: #3a3a3c;
   }
 
   :root {

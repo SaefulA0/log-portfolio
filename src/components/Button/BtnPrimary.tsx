@@ -1,32 +1,26 @@
-import Link from "next/link";
+import React from "react";
 import "./BtnPrimary.css";
 
 interface BtnPrimaryProps {
-  href: string;
   componentStyle: string;
-  BgHover: string;
   children: React.ReactNode;
+  onClick: () => void;
 }
 
 export default function BtnPrimary({
-  href,
   componentStyle,
-  BgHover,
   children,
+  onClick,
 }: BtnPrimaryProps): JSX.Element {
   return (
     <>
-      <Link href={href} type="button">
-        <div
-          className={`BtnPrimary w-fit ${componentStyle} mx-1 relative border border-gray-800 hover:border-gray-300 font-semibold tracking-wider leading-none overflow-hidden text-gray-800 hover:text-gray-100`}
-        >
-          <span className={`absolute inset-0 ${BgHover}`}></span>
-          <span className="absolute inset-0 flex justify-center items-center">
-            {children}
-          </span>
-          {children}
-        </div>
-      </Link>
+      {/* defaul style = bg-white hover:bg-black hover:text-white font-satoshi font-bold py-2 px-6 border border-black bg-white cursor-pointer*/}
+      <button
+        onClick={onClick}
+        className={`custom-btn btn-11 ${componentStyle}`}
+      >
+        <span>{children}</span>
+      </button>
     </>
   );
 }

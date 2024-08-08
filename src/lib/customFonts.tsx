@@ -3,42 +3,92 @@ import localFont from "next/font/local";
 const satoshi = localFont({
   src: [
     {
-      path: "../../public/fonts/satoshi/Satoshi-Light.ttf",
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-VariableItalic.ttf",
+      weight: "100",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-VariableItalic.ttf",
+      weight: "200",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/fonts/satoshi/Satoshi-LightItalic.ttf",
+      path: "../../public/fonts/satoshi/Satoshi-VariableItalic.ttf",
       weight: "300",
       style: "italic",
     },
     {
-      path: "../../public/fonts/satoshi/Satoshi-Regular.ttf",
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/satoshi/Satoshi-Italic.ttf",
+      path: "../../public/fonts/satoshi/Satoshi-VariableItalic.ttf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "../../public/fonts/satoshi/Satoshi-Bold.ttf",
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-VariableItalic.ttf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-VariableItalic.ttf",
+      weight: "600",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../../public/fonts/satoshi/Satoshi-BoldItalic.ttf",
+      path: "../../public/fonts/satoshi/Satoshi-VariableItalic.ttf",
       weight: "700",
       style: "italic",
     },
     {
-      path: "../../public/fonts/satoshi/Satoshi-Black.ttf",
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
+      weight: "800",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
       weight: "900",
       style: "normal",
     },
     {
-      path: "../../public/fonts/satoshi/Satoshi-BlackItalic.ttf",
+      path: "../../public/fonts/satoshi/Satoshi-Variable.ttf",
       weight: "900",
       style: "italic",
     },
@@ -86,6 +136,16 @@ const lato = localFont({
     {
       path: "../../public/fonts/lato/Lato-BoldItalic.ttf",
       weight: "700",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/lato/Lato-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/lato/Lato-BlackItalic.ttf",
+      weight: "900",
       style: "italic",
     },
   ],
