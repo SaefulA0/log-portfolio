@@ -4,6 +4,7 @@ import BtnPrimary from "@/components/Button/BtnPrimary";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/MotionDiv";
 
 export default function SixthSection() {
   const router = useRouter();
@@ -35,7 +36,7 @@ export default function SixthSection() {
     <section className="hidden md:block relative text-Dark2 body-font">
       <div className="w-full h-60 bg-white" />
       <div className="w-full h-40 bg-MainColor" />
-      <motion.div
+      <MotionDiv
         variants={containerVariants}
         initial="offscreen"
         whileInView="onscreen"
@@ -71,7 +72,7 @@ export default function SixthSection() {
             </BtnPrimary>
           </div>
         </div>
-      </motion.div>
+      </MotionDiv>
     </section>
   );
 }
