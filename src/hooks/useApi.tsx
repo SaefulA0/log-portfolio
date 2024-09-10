@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 
-interface ApiResponse {
-  // Definisikan tipe data yang diperlukan dari respons API Anda
+interface ApiResponse<T> {
+  success: boolean;
+  message: string;
+  data: T;
 }
 
-const useApi = (endpoint: string) => {
-  const [data, setData] = useState<ApiResponse | null>(null);
+export default function useApi<T>(endpoint: string) {
+  const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,8 +19,8 @@ const useApi = (endpoint: string) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
-        const responseData = await response.json();
-        setData(responseData);
+        const responseData: ApiResponse<T> = await response.json();
+        setData(responseData.data);
       } catch (error) {
         setError("An error occurred");
       } finally {
@@ -27,14 +29,7 @@ const useApi = (endpoint: string) => {
     };
 
     fetchData();
-
-    // Bersihkan efek jika komponen unmount atau endpoint berubah
-    return () => {
-      // Cleanup code here
-    };
   }, [endpoint]);
 
   return { data, loading, error };
-};
-
-export default useApi;
+}

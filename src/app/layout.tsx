@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navigation/Navbar";
 import { satoshi, lato } from "@/lib/customFonts";
+import MobileHeader from "@/components/Navigation/MobileHeader";
+import ResponsiveDesign from "@/components/ResDesign";
 
 export const metadata: Metadata = {
   title: "Software House | Lead On Global",
@@ -19,6 +21,8 @@ export default function RootLayout({
     <html lang="en" className={`${satoshi.variable} ${lato.variable}`}>
       <body className="relative min-w-full min-h-screen">
         <Navbar />
+        <MobileHeader />
+        <ResponsiveDesign />
         <main>{children}</main>
       </body>
     </html>
