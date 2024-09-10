@@ -1,54 +1,56 @@
-"use client";
+// "use client";
 import BtnSecondary from "@/components/Button/BtnSecondary";
 import Carousel from "@/components/Carousel/Carousel";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/MotionDiv";
 import useApi from "@/hooks/useApi";
+import { Project } from "@/interface/Project";
 
 export default function ThirdSection() {
-  const dataDummy = [
+  // const endpoint = "http://127.0.0.1:3658/m1/500294-475654-default/projects/";
+  // const { data, loading, error } = useApi<Project[]>(endpoint);
+
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>Error: {error}</p>;
+
+  const data = [
     {
-      id: 1,
+      ulid: 1,
       title: "Koperasi Web App",
-      description: "Aplikasi koperasi pekerja indonesia maju.",
+      subTitle: "Aplikasi koperasi pekerja indonesia maju.",
       buttonText: "See all projects",
       buttonLink: "/project",
     },
     {
-      id: 2,
+      ulid: 2,
       title: "Melodimix",
-      description: "Aplikasi rekomendasi musik dan daftar putar musik.",
+      subTitle: "Aplikasi rekomendasi musik dan daftar putar musik.",
       buttonText: "See all projects",
       buttonLink: "/project",
     },
     {
-      id: 3,
+      ulid: 3,
       title: "TokoPedia",
-      description:
+      subTitle:
         "Sebuah platform perdagangan elektronik (e-commerce) terbesar di Indonesia.",
       buttonText: "See all projects",
       buttonLink: "/project",
     },
     {
-      id: 4,
+      ulid: 4,
       title: "Wibukan",
-      description:
-        "Penyedia layanan streaming anime dan forum untuk pada Wibu.",
+      subTitle: "Penyedia layanan streaming anime dan forum untuk pada Wibu.",
       buttonText: "See all projects",
       buttonLink: "/project",
     },
     {
-      id: 5,
+      ulid: 5,
       title: "BMCampus",
-      description: "Layanan penyedia bimbingan daring.",
+      subTitle: "Layanan penyedia bimbingan daring.",
       buttonText: "See all projects",
       buttonLink: "/project",
     },
   ];
-
-  // use custom hooks for call api
-  // const endpoint = "http://127.0.0.1:3658/m1/500294-475654-default/projects/";
-  // const { data, loading, error } = useApi(endpoint);
 
   const headerVariants = {
     offscreen: {
@@ -92,27 +94,30 @@ export default function ThirdSection() {
         <div className="md:flex relative justify-between gap-10">
           <div className="md:w-full mb-11 md:mb-0 flex flex-col sm:flex-row md:flex-col items-start sm:items-center md:items-start gap-4 justify-between">
             <div className="w-fit">
-              <motion.h1
+              <MotionDiv
                 variants={headerVariants}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.8 }}
-                className="font-semibold font-satoshi text-4xl mb-6"
               >
-                Our Projects
-              </motion.h1>
-              <motion.p
+                <h1 className="font-semibold font-satoshi text-4xl mb-6">
+                  Our Projects
+                </h1>
+              </MotionDiv>
+              <MotionDiv
                 variants={headerVariants}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.8 }}
-                className="w-4/5 sm:w-[350px] md:w-full lg:w-[380px] xl:w-[480px] font-lato font-light text-base lg:text-xl mb-6"
               >
-                Explore our portfolio to see examples of the projects we have
-                delivered and how we can help bring your digital vision to life.
-              </motion.p>
+                <p className="w-4/5 sm:w-[350px] md:w-full lg:w-[380px] xl:w-[480px] font-lato font-light text-base lg:text-xl mb-6">
+                  Explore our portfolio to see examples of the projects we have
+                  delivered and how we can help bring your digital vision to
+                  life.
+                </p>
+              </MotionDiv>
             </div>
-            <motion.div
+            <MotionDiv
               variants={headerVariants}
               initial="offscreen"
               whileInView="onscreen"
@@ -126,9 +131,9 @@ export default function ThirdSection() {
               >
                 See all projects
               </BtnSecondary>
-            </motion.div>
+            </MotionDiv>
           </div>
-          <motion.div
+          <MotionDiv
             variants={carouselVariants}
             initial="offscreen"
             whileInView="onscreen"
@@ -136,11 +141,11 @@ export default function ThirdSection() {
             className="w-full md:w-1/2 flex justify-center md:justify-end"
           >
             <Carousel>
-              {dataDummy.map((project, i) => {
+              {data?.map((project) => {
                 return (
                   <div
                     className="relative flex-[0_0_100%] flex-col text-white"
-                    key={i}
+                    key={project.ulid}
                   >
                     <div className="grid grid-cols-2 gap-2 mb-[24px]">
                       <div className="grid grid-cols-1 gap-2">
@@ -185,13 +190,13 @@ export default function ThirdSection() {
                       </span>
                     </div>
                     <p className="text-base font-light w-80 font-lato">
-                      {project.description}
+                      {project.subTitle}
                     </p>
                   </div>
                 );
               })}
             </Carousel>
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
     </section>

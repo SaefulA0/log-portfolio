@@ -1,7 +1,6 @@
-"use client";
 import CardOurAdvantage from "@/components/Cards/CardOurAdvantage";
 import React from "react";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/MotionDiv";
 
 export default function FifthSection() {
   const data = [
@@ -42,7 +41,7 @@ export default function FifthSection() {
   return (
     <section className="text-Dark2 body-font bg-white">
       <div className="container text-center px-8 md:px-10 lg:px-16 xl:px-20 2xl:px-20 pb-12">
-        <motion.div
+        <MotionDiv
           variants={headerVariants}
           initial="offscreen"
           whileInView="onscreen"
@@ -55,7 +54,7 @@ export default function FifthSection() {
             Experience the difference with LOG's comprehensive solutions for
             your business.
           </p>
-        </motion.div>
+        </MotionDiv>
         <div className="w-full grid gap-5 px-5 md:px-0 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-12 text-start">
           {data.map((data) => (
             <CardOurAdvantage
