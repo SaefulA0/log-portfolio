@@ -1,7 +1,6 @@
-"use client";
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/MotionDiv";
 
 export default function SecondSection() {
   const data = [
@@ -68,7 +67,7 @@ export default function SecondSection() {
     <section className="text-Dark2 body-font">
       <div className="container w-full h-fit mx-auto px-8 md:px-10 lg:px-16 xl:px-20 2xl:px-20 py-24 flex flex-col items-center">
         <div className="w-full flex flex-col gap-2">
-          <motion.div
+          <MotionDiv
             variants={headerVariants}
             initial="offscreen"
             whileInView="onscreen"
@@ -85,23 +84,24 @@ export default function SecondSection() {
             <h1 className="font-satoshi font-semibold text-3xl md:text-4xl text-black">
               Why Load on Global?
             </h1>
-          </motion.div>
-          <motion.p
+          </MotionDiv>
+          <MotionDiv
             variants={headerVariants}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.8 }}
-            className="w-full md:w-[32rem] text-center md:text-left font-lato text-base"
           >
-            In the rapidly evolving digital landscape, we understand the
-            importance of selecting the right partner to help you achieve your
-            goals.
-          </motion.p>
+            <p className="w-full md:w-[32rem] text-center md:text-left font-lato text-base">
+              In the rapidly evolving digital landscape, we understand the
+              importance of selecting the right partner to help you achieve your
+              goals.
+            </p>
+          </MotionDiv>
         </div>
         {/* card */}
         <div className="w-full grid gap-6 md:gap-7 lg:gap-8 xl:gap-10 grid-cols-1 md:grid-cols-2 mt-12">
           {data.map((item) => (
-            <motion.div
+            <MotionDiv
               variants={cardVariants}
               initial="offscreen"
               whileInView="onscreen"
@@ -124,7 +124,7 @@ export default function SecondSection() {
                 </div>
                 <p className="font-lato">{item.desc}</p>
               </div>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </div>

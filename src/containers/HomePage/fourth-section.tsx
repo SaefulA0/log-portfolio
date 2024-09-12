@@ -1,6 +1,5 @@
-"use client";
 import CardsServices from "@/components/Cards/CardsServices";
-import { motion, Variants } from "framer-motion";
+import { MotionDiv } from "@/components/MotionDiv";
 
 export default function FourthSection() {
   const data = [
@@ -39,7 +38,7 @@ export default function FourthSection() {
   return (
     <section className="text-Dark2 body-font">
       <div className="container text-center px-8 md:px-10 lg:px-16 xl:px-20 2xl:px-20 pt-24 pb-12">
-        <motion.div
+        <MotionDiv
           variants={headerVariants}
           initial="offscreen"
           whileInView="onscreen"
@@ -53,7 +52,7 @@ export default function FourthSection() {
             delivering the best value and high-quality solutions to our
             customers.{" "}
           </p>
-        </motion.div>
+        </MotionDiv>
         <div className="">
           {data.map((item, index) => (
             <CardsServices

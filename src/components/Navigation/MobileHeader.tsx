@@ -9,14 +9,16 @@ import { Variants, motion } from "framer-motion";
 import logWhite from "/public/imgs/logWhite.svg";
 import logBlack from "/public/imgs/logBlack.svg";
 import { usePathname } from "next/navigation";
+import BtnBurger from "../Button/BtnBurger";
 
-export default function Navbar() {
+export default function MobileHeader() {
   const router = useRouter();
   const [navbarBg, setNavbarBg] = useState<string>("bg-transparent");
   const pathname = usePathname();
   const [logo, setLogo] = useState(logWhite);
   const [textColor, setTextColor] = useState("text-Light2");
   const [btnColor, setBtnColor] = useState("");
+  const [spanColor, setSpanColor] = useState("bg-black");
 
   useEffect(() => {
     if (pathname === "/") {
@@ -26,6 +28,7 @@ export default function Navbar() {
       setBtnColor(
         "bg-white hover:bg-black text-Dark1 hover:text-white border border-black hover:border-black"
       );
+      setSpanColor("bg-black");
       const handleScroll = () => {
         const position = window.scrollY;
         if (position > 0) {
@@ -48,6 +51,7 @@ export default function Navbar() {
       setBtnColor(
         "bg-black hover:bg-white text-white hover:text-Dark1 border border-white hover:border-black"
       );
+      setSpanColor("bg-white");
       const handleScroll = () => {
         const position = window.scrollY;
         if (position > 0) {
@@ -57,6 +61,7 @@ export default function Navbar() {
           setBtnColor(
             "bg-white hover:bg-black text-Dark1 hover:text-white border border-black hover:border-black"
           );
+          setSpanColor("bg-black");
         } else {
           setNavbarBg("bg-transparent pt-7");
           setLogo(logWhite);
@@ -64,6 +69,7 @@ export default function Navbar() {
           setBtnColor(
             "bg-black hover:bg-white text-white hover:text-Dark1 border border-white hover:border-black"
           );
+          setSpanColor("bg-white");
         }
       };
 
@@ -103,18 +109,15 @@ export default function Navbar() {
 
   return (
     <header
-      className={`hidden md:block fixed top-0 right-0 left-0 ${textColor} body-font transition-all duration-300 z-50 py-5 ${navbarBg} font-satoshi`}
+      className={`block md:hidden fixed top-0 right-0 left-0 ${textColor} body-font transition-all duration-300 z-50 py-5 ${navbarBg} font-satoshi`}
     >
       <motion.div
         variants={containerVariants}
         initial="offscreen"
         animate="onscreen"
-        className="container mx-auto relative flex flex-wrap md:px-10 lg:px-16 xl:px-20 2xl:px-20 flex-col md:flex-row items-center justify-between"
+        className="relative container flex flex-wrap items-center justify-between"
       >
-        <Link
-          href="/"
-          className="title-font flex font-medium items-center md:mb-0"
-        >
+        <Link href="/" className="title-font flex font-medium items-center">
           <Image
             src={logo}
             width={180}
@@ -124,25 +127,19 @@ export default function Navbar() {
             className="w-36 lg:w-auto h-auto"
           />
         </Link>
-        <nav className="md:ml-auto md:mr-auto absolute inset-0 flex items-center text-base justify-center">
+        <nav className="hidden sm:flex items-center text-base justify-center absolute inset-0">
           <BtnLink href="/">Home</BtnLink>
           <BtnLink href="/about">About</BtnLink>
           <BtnLink href="/project">Projects</BtnLink>
-          <BtnLink href="/contact">Contact</BtnLink>
         </nav>
-        <div>
+        <div className="flex">
           <BtnPrimary
             onClick={handleClickId}
-            componentStyle={`${btnColor} font-satoshi font-medium py-1 px-2 lg:py-1.5 lg:px-2.5 xl:py-2 xl:px-3 mr-2 cursor-pointer`}
+            componentStyle={`${btnColor} font-satoshi font-medium py-1 px-2 mr-2 cursor-pointer`}
           >
             EN
           </BtnPrimary>
-          <BtnPrimary
-            onClick={handleClickWhatsapp}
-            componentStyle={`${btnColor} font-satoshi font-medium py-1 px-2 lg:py-1.5 lg:px-2.5 xl:py-2 xl:px-6 cursor-pointer`}
-          >
-            Whatsapp
-          </BtnPrimary>
+          <BtnBurger spanColor={spanColor} />
         </div>
       </motion.div>
     </header>
