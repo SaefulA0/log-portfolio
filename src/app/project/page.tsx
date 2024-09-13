@@ -1,7 +1,7 @@
 import ResponsiveDesign from "@/components/ResDesign";
 import HeroSection from "@/containers/ProjectPage/hero-section";
 import SecondSection from "@/containers/ProjectPage/second-section";
-import OtherFooter from "@/components/Footer/OtherFooter";
+import FooterOtherPage from "@/components/Footer/FooterOtherPage";
 
 export default function project() {
   return (
@@ -9,7 +9,7 @@ export default function project() {
       {/* <ResponsiveDesign /> */}
       <HeroSection />
       <SecondSection />
-      <OtherFooter />
+      <FooterOtherPage />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import HeroSection from "@/containers/AboutPage/hero-section";
 import SecondSection from "@/containers/AboutPage/second-section";
 import ThirdSection from "@/containers/AboutPage/third-section";
 import FourthSection from "@/containers/AboutPage/fourth-section";
+import TeamSection from "@/containers/AboutPage/team-section";
 import FooterOtherPage from "@/components/Footer/FooterOtherPage";
 
 export default function about() {
@@ -12,6 +13,7 @@ export default function about() {
       <SecondSection />
       <ThirdSection />
       <FourthSection />
+      <TeamSection />
       <ResponsiveDesign />
       <FooterOtherPage />
     </section>

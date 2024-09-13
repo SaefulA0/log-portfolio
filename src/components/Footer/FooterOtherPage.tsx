@@ -12,7 +12,7 @@ export default function FooterOtherPage() {
           {/* Logo, Telp, Gmail */}
           <div className="w-64 md:w-52 lg:w-60 xl:w-72 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left px-4">
             <Image
-              src="/public/imgs/logWhite.svg"
+              src="/imgs/logWhite.svg"
               width={280}
               height={47}
               alt="Logo LOG"
@@ -58,7 +58,7 @@ export default function FooterOtherPage() {
             <div className="w-full flex md:hidden justify-center items-center mb-10">
               <button className="bg-Light4 w-11 h-11 border flex justify-center items-center">
                 <Image
-                  src="/public/icons/chevron-up.svg"
+                  src="/icons/chevron-up.svg"
                   width={64}
                   height={64}
                   alt="Logo LOG"

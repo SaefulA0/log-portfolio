@@ -3,7 +3,7 @@ import HeroSection from "@/containers/DetailProjectPage/hero-section";
 import Secondsection from "@/containers/DetailProjectPage/second-section";
 import Thirdsection from "@/containers/DetailProjectPage/third-section";
 import FourtSection from "@/containers/DetailProjectPage/fourth-section";
-import OtherFooter from "@/components/Footer/OtherFooter";
+import FooterOtherPage from "@/components/Footer/FooterOtherPage";
 
 export default function project() {
   return (
@@ -13,7 +13,7 @@ export default function project() {
       <Secondsection />
       <Thirdsection />
       <FourtSection />
-      <OtherFooter />
+      <FooterOtherPage />
     </div>
   );
 }
